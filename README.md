@@ -1,6 +1,6 @@
 # Prædikener
  
-Dette repositorie genspejler hvordan indsamlede data renses og struktureres for at blive gemt i en relationel database. Denne opforelse udelukker selve prædikernes tekster for at undgå at dele personfølsomme data. 
+Dette repositorie genspejler hvordan indsamlede data renses og struktureres for at blive gemt i en relationel database. Denne opførelse udelukker selve prædikernes tekster for at undgå at dele personfølsomme data. 
 
 ## Oprindelig Metadata
 Indsamlingens oprindelige metadata var i form af en tabel med de følgende kolonner. 
