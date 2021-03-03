@@ -49,6 +49,6 @@ Præst: {
 ```
 
 ## Data Graph
-The graph for the models and their relations is shown below. Integers are represented in red, strings in green and the data classes are distinguished in color
+The graph for the models and their relations is shown below. Integers are represented in red, strings in green and the data classes hold separate colour codes.
 
 ![graf](./graf.png)
