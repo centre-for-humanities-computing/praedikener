@@ -15,29 +15,31 @@ helligdag               | church holiday
 sogn str.               | inhabitants in the parish for which the sermon is composed (ELCD members/total) 
 stift                   | name of diocese
 årgang                  | the pastor's birth year
-køn                     | the pastor's sex
+køn                     | the pastor's gender
 uddannelsessted         | the pastor's place of education
 
 ```  
 
 ## Data Model
-The data has been normalised to avoid ambivalence. In order to resemble the relationship between data points, the columns in the table have been divided between two distinct data models: __Prædiken__ og __Præst__. The models each describe a data class. The classes and their features are explicated in the following:
+The data has been normalised to avoid ambivalence. In order to resemble the relationship between data points, the columns in the table have been divided between two distinct data models: __Prædiken__ (sermon) og __Præst__ (pastor). The models each describe a data class. The classes and their properties are explicated in the following:
 
-### Prædiken
-Klassen __Prædiken__ indeholder data punkter om begivelsen for selve prædikens levering. _Præst_ holder en reference til den __Præst__ som holdt prædiken. _Stift_ nævner hvilken stift prædiken blev afholdt i. _SognIndbyggere_ gemmer antal indbyggere i sognet. _SognMedlemmer_ tæller hvor mange medlemmer af folkekirken der er i sognet. _Text_ indeholder prædikens indhold i klartekst.  
+### Sermon
+The class __Prædiken__ holds data points about the context for which the sermon is composed. _Præst_ refers to the __Præst__ who composed the sermon. _Dato_ states the date of the church service for which the sermon was composed. _Helligdag_ holds the name of the church holiday for which the sermon was composed. _Stift_ mentions the diocese in which the sermon was delivered. _SognIndbyggere_ states the total number of inhibitants in the parish, where the sermon was delivered, and _SognMedlemmer_ states how many members of the ELCD the parish has. _Text_ contains the sermon in full text.  
 
 ```
 Prædiken: {
     præst:              <id Præst>,
+    dato:               String,
+    helligdag:          String,
     stift:              String,
     sognIndbyggere:     Integer,
-    sognMedlemmer:      Integer
-    text:               String
+    sognMedlemmer:      Integer,
+    text:               String,
 }
 ```
 
-### Præst
-Klassen __Præst__ specificerer generelle data om personen. _Køn_ klassificerer mandlige og kvindelige præster uden at nævne kønnet (1 eller 2). _Uddannelsessted_ nævner byen praæsten fik sin uddannelse i. _Årgang_ indholder præstens fødselsår. 
+### Pastor
+The class __Præst__ specifies general data about the author of the sermon. _Køn_ classifies the gender of the pastor (1 is male, 2 is female). _Uddannelsessted_ mentions the city in which the pastor received his or her theological degree. _Årgang_ includes the birth year of the pastor. 
 ```
 Præst: {
     køn:                Integer,
@@ -46,7 +48,7 @@ Præst: {
 }
 ```
 
-## Data Graf
-Grafen for modellerne og deres relation vises nedenfor. Integers er vist i rød, strings i grøn og Data klasserne kan skelnes i farve.
+## Data Graph
+The graph for the models and their relations is shown below. Integers are represented in red, strings in green and the data classes are distinguished in color
 
 ![graf](./graf.png)
