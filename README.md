@@ -3,10 +3,10 @@
 This repository presents a corpus of 11,955 sermons from the Evangelical Lutheran Church in Denmark (ELCD), which is structured for a relational database. The repository only includes metadata, since the corpus texts contain sensitive personal information.
 
 ## Metadata
-The corpus metadata is included in the file metadata.csv as a table with the following columns. The labels are composed in Danish.
+The corpus metadata is composed to mask the identities of individual pastors. The data is included in the file metadata.csv as a table with the following columns. The labels are composed in Danish.
 
 ```
-Kolonnenavn             | Beskrivelse
+Column name             | Description
 ------------------------------------------------------------
 dokumentId              | id of the document holding the sermon's text
 præstId                 | id of the pastor who wrote the sermon
@@ -24,7 +24,7 @@ uddannelsessted         | the pastor's place of education
 The data has been normalised to avoid ambivalence. In order to resemble the relationship between data points, the columns in the table have been divided between two distinct data models: __Prædiken__ (sermon) og __Præst__ (pastor). The models each describe a data class. The classes and their properties are explicated in the following:
 
 ### Sermon
-The class __Prædiken__ holds data points about the context for which the sermon is composed. _Præst_ refers to the __Præst__ who composed the sermon. _Dato_ states the date of the church service for which the sermon was composed. _Helligdag_ holds the name of the church holiday for which the sermon was composed. _Stift_ mentions the diocese in which the sermon was delivered. _SognIndbyggere_ states the total number of inhibitants in the parish, where the sermon was delivered, and _SognMedlemmer_ states how many members of the ELCD the parish has. _Text_ contains the sermon in full text.  
+The class __Prædiken__ holds data points about the context for which the sermon is composed. _Præst_ refers to the __Præst__ who composed the sermon. _Dato_ states the date of the church service for which the sermon was composed. _Helligdag_ holds the name of the church holiday for which the sermon was composed. _Stift_ mentions the diocese in which the sermon was delivered. _SognIndbyggere_ states the total number of inhibitants in the parish where the sermon was delivered, and _SognMedlemmer_ states the number of ELCD-members the parish has. _Text_ contains the sermon in full text.  
 
 ```
 Prædiken: {
@@ -49,6 +49,6 @@ Præst: {
 ```
 
 ## Data Graph
-The graph for the models and their relations is shown below. Integers are represented in red, strings in green and the data classes hold separate colour codes.
+The models and their relationhsip is shown in the graph below. Integers are represented in red, strings in green and the data classes hold separate colour codes.
 
 ![graf](./graf.png)
