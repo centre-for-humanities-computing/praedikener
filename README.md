@@ -1,6 +1,6 @@
 # Danish Sermons
  
-This repository present a corpus of 11,955 sermons from the Evangelical Lutheran Church in Denmark (ELCD), which is structured for a relational database. The repository only includes metadata, since the corpus texts contain sensitive personal information.
+This repository presents a corpus of 11,955 sermons from the Evangelical Lutheran Church in Denmark (ELCD), which is structured for a relational database. The repository only includes metadata, since the corpus texts contain sensitive personal information.
 
 ## Metadata
 The corpus metadata is included in the file metadata.csv as a table with the following columns. The labels are composed in Danish.
